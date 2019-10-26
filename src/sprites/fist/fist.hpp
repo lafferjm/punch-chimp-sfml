@@ -3,12 +3,13 @@
 
 #include <string>
 #include <SFML/Graphics.hpp>
+#include "../chimp/chimp.hpp"
 
 class Fist {
     public:
         Fist(std::string);
         void update(sf::RenderWindow*);
-        void punch(sf::Sprite*);
+        void punch(Chimp*);
         void unpunch();
 
     private:

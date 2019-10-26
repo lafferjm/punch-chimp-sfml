@@ -1,6 +1,8 @@
-#include "fist.hpp"
 #include <string>
 #include <SFML/Graphics.hpp>
+#include "fist.hpp"
+#include "../chimp/chimp.hpp"
+
 
 Fist::Fist(std::string texture_file) {
     m_punching = false;
@@ -19,7 +21,7 @@ void Fist::update(sf::RenderWindow* window) {
     window->draw(m_sprite);
 }
 
-void Fist::punch(sf::Sprite* target) {
+void Fist::punch(Chimp* target) {
     
 }
 
