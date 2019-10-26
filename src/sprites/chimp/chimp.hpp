@@ -10,13 +10,13 @@ class Chimp {
         void update(sf::RenderWindow*);
         sf::FloatRect get_rect();
     private:
-        int m_move_speed;
+        float m_move_speed;
         int m_dizzy;
 
         sf::Texture m_sprite_texture;
         sf::Sprite m_sprite;
 
-        void walk();
+        void walk(float);
         void spin();
         void punched();
 };

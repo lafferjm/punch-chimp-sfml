@@ -21,6 +21,7 @@ sf::Text setupText(sf::Font* font, std::string text_content, sf::Vector2f positi
 int main(int argc, char** argv) {
     sf::RenderWindow window(sf::VideoMode(468, 60), "Monkey Fever");
     window.setMouseCursorVisible(false);
+    window.setFramerateLimit(60);
 
     sf::Font font;
     sf::Text text;
