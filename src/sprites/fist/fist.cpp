@@ -1,4 +1,5 @@
 #include "fist.hpp"
+#include <string>
 #include <SFML/Graphics.hpp>
 
 Fist::Fist(std::string texture_file) {

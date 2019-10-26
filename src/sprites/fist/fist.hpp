@@ -1,6 +1,7 @@
 #ifndef __FIST_HPP__
 #define __FIST_HPP__
 
+#include <string>
 #include <SFML/Graphics.hpp>
 
 class Fist {
