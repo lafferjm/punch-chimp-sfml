@@ -18,8 +18,8 @@ void Fist::update(sf::RenderWindow* window) {
     window->draw(m_sprite);
 }
 
-bool Fist::punch(sf::Sprite* target) {
-    return false;
+void Fist::punch(sf::Sprite* target) {
+    
 }
 
 void Fist::unpunch() {

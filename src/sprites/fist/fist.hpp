@@ -7,7 +7,7 @@ class Fist {
     public:
         Fist(std::string);
         void update(sf::RenderWindow*);
-        bool punch(sf::Sprite*);
+        void punch(sf::Sprite*);
         void unpunch();
 
     private:
