@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include "sprites/fist/fist.hpp"
 
 sf::Text setupText(sf::Font* font, std::string text_content, sf::Vector2f position) {
     font->loadFromFile("resources/fonts/freesansbold.ttf");
@@ -25,7 +26,9 @@ int main(int argc, char** argv) {
     text = setupText(&font, "Pummel The Chimp, And Win $$$",
         sf::Vector2f(window.getSize().x / 2 , 0));
 
-
+    Fist *fist = new Fist();
+    fist->say_hello();
+    
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
