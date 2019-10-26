@@ -6,13 +6,14 @@
 class Fist {
     public:
         Fist(std::string);
-        void update();
+        void update(sf::RenderWindow*);
         bool punch(sf::Sprite*);
         void unpunch();
 
     private:
-        bool m_punching = false;
-        sf::Sprite sprite;
+        bool m_punching;
+        sf::Sprite m_sprite;
+        sf::Texture m_sprite_texture;
 };
 
 #endif

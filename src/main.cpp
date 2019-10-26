@@ -25,10 +25,9 @@ int main(int argc, char** argv) {
     sf::Text text;
     text = setupText(&font, "Pummel The Chimp, And Win $$$",
         sf::Vector2f(window.getSize().x / 2 , 0));
-
-    Fist *fist = new Fist();
-    fist->say_hello();
     
+    Fist* fist = new Fist("resources/textures/fist.bmp");
+
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
@@ -39,6 +38,7 @@ int main(int argc, char** argv) {
 
         window.clear(sf::Color::White);
         window.draw(text);
+        fist->update(&window);
 
         window.display();
     }   
