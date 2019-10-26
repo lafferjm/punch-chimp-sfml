@@ -1,5 +1,6 @@
 #include <string>
 #include <SFML/Graphics.hpp>
+#include <iostream>
 #include "fist.hpp"
 #include "../chimp/chimp.hpp"
 
@@ -22,7 +23,11 @@ void Fist::update(sf::RenderWindow* window) {
 }
 
 void Fist::punch(Chimp* target) {
-    
+    if (m_sprite.getGlobalBounds().intersects(target->get_rect())) {
+        std::cout << "You punched the chimp" << std::endl;
+    } else {
+        std::cout << "You missed" << std::endl;
+    }
 }
 
 void Fist::unpunch() {

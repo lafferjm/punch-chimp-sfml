@@ -37,7 +37,7 @@ int main(int argc, char** argv) {
                 window.close();
             } else if (event.type == sf::Event::MouseButtonPressed) {
                 if (event.mouseButton.button == sf::Mouse::Left) {
-                    // call punch of fist on chimp
+                    fist->punch(chimp);
                 }
             }
         }

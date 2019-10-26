@@ -14,6 +14,10 @@ Chimp::Chimp(std::string texture_file) {
     m_sprite.setTexture(m_sprite_texture);
 }
 
+sf::FloatRect Chimp::get_rect() {
+    return m_sprite.getGlobalBounds();
+}
+
 void Chimp::update(sf::RenderWindow* window) {
     window->draw(m_sprite);
 }

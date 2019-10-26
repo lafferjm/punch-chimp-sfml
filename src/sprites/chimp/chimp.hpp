@@ -8,6 +8,7 @@ class Chimp {
     public:
         Chimp(std::string);
         void update(sf::RenderWindow*);
+        sf::FloatRect get_rect();
     private:
         int m_move_speed;
         int m_dizzy;
