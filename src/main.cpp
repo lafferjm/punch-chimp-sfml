@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include "sprites/fist/fist.hpp"
+#include "sprites/chimp/chimp.hpp"
 
 sf::Text setupText(sf::Font* font, std::string text_content, sf::Vector2f position) {
     font->loadFromFile("resources/fonts/freesansbold.ttf");
@@ -27,6 +28,7 @@ int main(int argc, char** argv) {
         sf::Vector2f(window.getSize().x / 2 , 0));
     
     Fist* fist = new Fist("resources/textures/fist.bmp");
+    Chimp* chimp = new Chimp("resources/textures/chimp.bmp");
 
     while (window.isOpen()) {
         sf::Event event;
@@ -42,6 +44,7 @@ int main(int argc, char** argv) {
 
         window.clear(sf::Color::White);
         window.draw(text);
+        chimp->update(&window);
         fist->update(&window);
 
         window.display();

@@ -15,7 +15,7 @@ Chimp::Chimp(std::string texture_file) {
 }
 
 void Chimp::update(sf::RenderWindow* window) {
-
+    window->draw(m_sprite);
 }
 
 void Chimp::walk() {
