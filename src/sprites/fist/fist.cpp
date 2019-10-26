@@ -1,6 +1,5 @@
 #include <string>
 #include <SFML/Graphics.hpp>
-#include <iostream>
 #include "fist.hpp"
 #include "../chimp/chimp.hpp"
 
@@ -13,6 +12,12 @@ Fist::Fist(std::string texture_file) {
 
     m_sprite_texture.loadFromImage(image);
     m_sprite.setTexture(m_sprite_texture);
+
+    m_punch_buffer.loadFromFile("resources/sounds/punch.wav");
+    m_punch_sound.setBuffer(m_punch_buffer);
+
+    m_whiff_buffer.loadFromFile("resources/sounds/whiff.wav");
+    m_whiff_sound.setBuffer(m_whiff_buffer);
 }
 
 void Fist::update(sf::RenderWindow* window) {
@@ -24,9 +29,9 @@ void Fist::update(sf::RenderWindow* window) {
 
 void Fist::punch(Chimp* target) {
     if (m_sprite.getGlobalBounds().intersects(target->get_rect())) {
-        std::cout << "You punched the chimp" << std::endl;
+        m_punch_sound.play();
     } else {
-        std::cout << "You missed" << std::endl;
+        m_whiff_sound.play();
     }
 }
 
