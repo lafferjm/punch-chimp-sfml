@@ -22,7 +22,8 @@ int main(int argc, char** argv) {
 
     sf::Font font;
     sf::Text text;
-    text = setupText(&font, "Pummel The Chimp, And Win $$$", sf::Vector2f(window.getSize().x / 2 , 0));
+    text = setupText(&font, "Pummel The Chimp, And Win $$$",
+        sf::Vector2f(window.getSize().x / 2 , 0));
 
 
     while (window.isOpen()) {
