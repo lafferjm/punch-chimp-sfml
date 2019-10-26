@@ -12,6 +12,9 @@ Fist::Fist(std::string texture_file) {
 }
 
 void Fist::update(sf::RenderWindow* window) {
+    sf::Mouse mouse;
+    m_sprite.setPosition((sf::Vector2f)mouse.getPosition((*window)));
+
     window->draw(m_sprite);
 }
 
