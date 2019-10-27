@@ -24,15 +24,22 @@ void Fist::update(sf::RenderWindow* window) {
     sf::Mouse mouse;
     m_sprite.setPosition((sf::Vector2f)mouse.getPosition((*window)));
 
+    if (m_punching) {
+        m_sprite.move(5, 10);
+    }
+
     window->draw(m_sprite);
 }
 
 void Fist::punch(Chimp* target) {
-    if (m_sprite.getGlobalBounds().intersects(target->get_rect())) {
-        m_punch_sound.play();
-        target->punched();
-    } else {
-        m_whiff_sound.play();
+    if (!m_punching) {
+        m_punching = true;
+        if (m_sprite.getGlobalBounds().intersects(target->get_rect())) {
+            m_punch_sound.play();
+            target->punched();
+        } else {
+            m_whiff_sound.play();
+        }
     }
 }
 

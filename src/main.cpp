@@ -40,6 +40,10 @@ int main(int argc, char** argv) {
                 if (event.mouseButton.button == sf::Mouse::Left) {
                     fist->punch(chimp);
                 }
+            } else if (event.type == sf::Event::MouseButtonReleased) {
+                if (event.mouseButton.button == sf::Mouse::Left) {
+                    fist->unpunch();
+                }
             }
         }
 
