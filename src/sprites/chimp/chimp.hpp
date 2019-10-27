@@ -7,6 +7,7 @@
 class Chimp {
     public:
         Chimp(std::string);
+        void punched();
         void update(sf::RenderWindow*);
         sf::FloatRect get_rect();
     private:
@@ -18,7 +19,6 @@ class Chimp {
 
         void walk(float);
         void spin();
-        void punched();
 };
 
 #endif

@@ -14,6 +14,13 @@ Chimp::Chimp(std::string texture_file) {
 
     m_sprite_texture.loadFromImage(image);
     m_sprite.setTexture(m_sprite_texture);
+
+
+    float x_origin = m_sprite.getLocalBounds().width / 2;
+    float y_origin = m_sprite.getLocalBounds().height / 2;
+    m_sprite.setOrigin(x_origin, y_origin);
+
+    m_sprite.setPosition(x_origin, y_origin);
 }
 
 sf::FloatRect Chimp::get_rect() {
@@ -33,7 +40,7 @@ void Chimp::update(sf::RenderWindow* window) {
 void Chimp::walk(float right_bounds) {
     float new_position = m_sprite.getPosition().x + m_move_speed;
     
-    float chimp_width = m_sprite.getGlobalBounds().width;
+    float chimp_width = m_sprite.getLocalBounds().width / 2;
 
     if (new_position >= right_bounds - chimp_width) {
         m_move_speed = m_move_speed * -1;
@@ -43,13 +50,21 @@ void Chimp::walk(float right_bounds) {
         new_position = m_sprite.getPosition().x + m_move_speed;
     }
 
-    m_sprite.setPosition(new_position, 0);
+    m_sprite.setPosition(new_position, m_sprite.getLocalBounds().height / 2);
 }
 
 void Chimp::spin() {
+    m_dizzy = m_dizzy + 12;
 
+    if (m_dizzy >= 360) {
+        m_dizzy = 0;
+    }
+
+    m_sprite.setRotation(m_dizzy);
 }
 
 void Chimp::punched() {
-    
+    if (!m_dizzy) {
+        m_dizzy =  1;
+    }
 }

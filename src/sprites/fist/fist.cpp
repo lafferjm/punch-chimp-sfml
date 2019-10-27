@@ -30,6 +30,7 @@ void Fist::update(sf::RenderWindow* window) {
 void Fist::punch(Chimp* target) {
     if (m_sprite.getGlobalBounds().intersects(target->get_rect())) {
         m_punch_sound.play();
+        target->punched();
     } else {
         m_whiff_sound.play();
     }
